@@ -1,18 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
+    <!-- Top Slot for Correct Answer -->
     <TextView
+        android:id="@+id/tv_correct_answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="visible"
+        android:text="Test"
+        android:layout_alignParentTop="true"
+        android:background="#387c44" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Word Attempts Area -->
+    <GridLayout
+        android:id="@+id/gl_attempts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_correct_answer"
+        android:rowCount="5"
+        android:columnCount="5"
+        android:background="#f44336">
+        <!-- Add TextViews here for each letter slot -->
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/gl_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_q"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_w"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_e"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_r"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+
+        <Button
+            android:id="@+id/button_t"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q" />
+        <Button
+            android:id="@+id/button_y"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_u"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            color
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_i"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_o"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+        <Button
+            android:id="@+id/button_p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Q"/>
+
+    </GridLayout>
+
+
+    <!-- Button on the Left -->
+    <Button
+        android:id="@+id/btn_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/gl_keyboard"
+        android:layout_alignParentStart="true"
+        android:background="#795548" />
+
+    <!-- Score Counter on the Right -->
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/gl_keyboard"
+        android:layout_alignParentEnd="true"
+        android:background="#795548" />
+</RelativeLayout>
